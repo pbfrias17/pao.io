@@ -3,7 +3,7 @@
 }
 
 :root {
-  --color-orange: #e27d60;
+  --color-orange: #e0894f;
   --color-aqua: #77bfb7;
   --color-cobalt: #45818e;
   --color-rocky: #e8a87c;
@@ -18,13 +18,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: radial-gradient(
-    circle at top,
-    var(--color-rocky) 12%,
-    var(--color-orange) 25%
-  );
-  /* background-color: var(--color-rocky); */
-  background-color: transparent;
+  background-color: var(--color-rocky);
   min-height: 100vh;
 }
 

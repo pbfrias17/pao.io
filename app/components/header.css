@@ -3,11 +3,11 @@
   flex-direction: column;
   align-items: center;
   background-color: transparent;
-  /* background: radial-gradient(
-    ellipse at top,
-    var(--color-rocky),
-    var(--color-orange)
-  ); */
+  background: radial-gradient(
+    circle at top,
+    var(--color-orange) 15%,
+    var(--color-rocky) 20%
+  );
 }
 
 #header-container h1 {

@@ -7,6 +7,8 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import FooterComponent from "./components/footer";
+import footerStyles from "./components/footer.css";
 import HeaderComponent from "./components/header";
 import headerStyles from "./components/header.css";
 import styles from "~/styles/main.css";
@@ -25,6 +27,9 @@ export default function App() {
           <HeaderComponent />
         </header>
         <Outlet />
+        <footer>
+          <FooterComponent />
+        </footer>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
@@ -37,5 +42,6 @@ export function links() {
   return [
     {rel: "stylesheet", href: styles},
     {rel: "stylesheet", href: headerStyles},
+    {rel: "stylesheet", href: footerStyles},
   ];
 }
