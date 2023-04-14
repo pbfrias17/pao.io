@@ -7,8 +7,9 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import HeaderComponent from "./components/header";
+import headerStyles from "./components/header.css";
 import styles from "~/styles/main.css";
-import MainNavigationComponent from "./components/mainNavigation";
 
 export default function App() {
   return (
@@ -21,7 +22,7 @@ export default function App() {
       </head>
       <body>
         <header>
-          <MainNavigationComponent />
+          <HeaderComponent />
         </header>
         <Outlet />
         <ScrollRestoration />
@@ -35,5 +36,6 @@ export default function App() {
 export function links() {
   return [
     {rel: "stylesheet", href: styles},
+    {rel: "stylesheet", href: headerStyles},
   ];
 }

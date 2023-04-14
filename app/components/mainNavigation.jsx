@@ -3,14 +3,17 @@ import { NavLink } from "@remix-run/react";
 export default function MainNavigationComponent() {
   return <nav id="main-navigation">
     <ul id="main-navigation-list">
-      <li class="main-navigation-list-item">
-        <NavLink to="/">About Me</NavLink>
+      <li class="nav-item">
+        <NavLink to="/">H O M E</NavLink>
       </li>
-      <li class="main-navigation-list-item">
-        <NavLink to="/resume">My Resume</NavLink>
+      <li class="nav-item">
+        <NavLink to="/resume">B L O G S</NavLink>
       </li>
-      <li class="main-navigation-list-item">
-        <NavLink to="/more_details">... dive deeper</NavLink>
+      <li class="nav-item">
+        <NavLink to="/resume">R E S U M E</NavLink>
+      </li>
+      <li class="nav-item">
+        <NavLink to="/more_details">M O R E . . .</NavLink>
       </li>
     </ul>
   </nav>;

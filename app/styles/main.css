@@ -3,64 +3,63 @@
 }
 
 :root {
-  --color-primary-10: #e7cffe;
-  --color-primary-50: #dcbcfb;
-  --color-primary-100: #ca97fc;
-  --color-primary-200: #b779f4;
-  --color-primary-300: #a85ff0;
-  --color-primary-400: #8f42dd;
-  --color-primary-500: #8d34e6;
-  --color-primary-600: #8021e0;
-  --color-primary-700: #690fc3;
-  --color-primary-800: #4e0596;
-
-  --color-secondary-50: hsl(24, 93%, 83%);
-  --color-secondary-100: hsl(24, 91%, 75%);
-  --color-secondary-200: hsl(24, 96%, 68%);
-  --color-secondary-300: hsl(24, 96%, 61%);
-  --color-secondary-400: hsl(24, 96%, 53%);
-  --color-secondary-500: hsl(24, 100%, 50%);
-  --color-secondary-600: hsl(22, 90%, 50%);
+  --color-orange: #e27d60;
+  --color-aqua: #77bfb7;
+  --color-cobalt: #45818e;
+  --color-rocky: #e8a87c;
+  --color-purple: #c38d9e;
+  --color-bluegreen: #41b3a3;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: radial-gradient(
-    ellipse at top,
-    var(--color-primary-400),
-    var(--color-primary-100)
+    circle at top,
+    var(--color-rocky) 12%,
+    var(--color-orange) 25%
   );
+  /* background-color: var(--color-rocky); */
+  background-color: transparent;
   min-height: 100vh;
 }
 
-#main-navigation {
-  padding: 2rem 15%;
+#main-image-container {
+  background-color: var(--color-bluegreen);
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+#about-me-section {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
 }
 
-#main-navigation ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.main-container {
   display: flex;
-  gap: 1.5rem;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.nav-item a {
-  text-decoration: none;
-  color: var(--color-primary-10);
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.nav-item a:hover,
-.nav-item a.active {
-  color: var(--color-secondary-200);
+.circle {
+  border-radius: 100%;
+}
+
+.img {
+  width: inherit;
+  height: inherit;
 }
 
 .error {
@@ -68,7 +67,7 @@ body {
   margin: 3rem auto;
   padding: 2rem;
   text-align: center;
-  background-color: var(--color-secondary-100);
+  background-color: var(--color-cobalt);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 }
@@ -76,8 +75,41 @@ body {
 .info-message {
   margin: 2rem;
   text-align: center;
-  color: var(--color-primary-50);
+  color: var(--color-aqua);
   font-size: 1.5rem;
+}
+
+.circular-path-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --m: 12;
+  --tan: 0.41;
+  --d: 5.2em; /* image size */
+  --rel: 1; /* how much extra space we want between images, 1 = one image size */
+  --r: calc(.5*(1 + var(--rel))*var(--d)/var(--tan)); /* circle radius */
+  --s: calc(2*var(--r) + var(--d)); /* container size */
+  position: relative;
+  width: var(--s);
+  height: var(--s);
+}
+
+.circular-path-container a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: calc(-.5*var(--d));
+  width: var(--d);
+  height: var(--d);
+  --az: calc(var(--i)*1turn/var(--m));
+  transform: 
+    rotate(var(--az))
+    translate(var(--r))
+    rotate(calc(-1*var(--az)))
+}
+
+.circular-path-img {
+  max-width: 100%;
 }
 
 @keyframes fade-blur-in {
