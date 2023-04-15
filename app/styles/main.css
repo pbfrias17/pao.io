@@ -34,16 +34,29 @@ body {
   flex-direction: row;
 }
 
+#about-me-section div {
+  padding: 1em;
+}
+
+#about-me-left {
+  background-color: var(--color-cobalt);
+}
+
+#about-me-right {
+  background-color: var(--color-purple);
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 }
 
 .row {
   display: flex;
+  flex: 1;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 

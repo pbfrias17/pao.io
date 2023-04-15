@@ -29,16 +29,16 @@ export default function Index() {
           }
         </div>
         <div id="about-me-section">
-          <div>
+          <div id="about-me-left">
             <h3>I am</h3>
             <p>a Software Engineer</p>
             <p>a consumer of media</p>
             <p>a tennis player</p>
           </div>
-          <div>
+          <div id="about-me-right">
             <h3>I am not</h3>
             <p>Devops</p>
-            <p>a consumer of trashy reality TV</p>
+            <p>a consumer of trashy reality shows</p>
             <p>good at tennis</p>
           </div>
         </div>
