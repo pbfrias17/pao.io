@@ -1,7 +1,7 @@
 import { Link } from "@remix-run/react";
 import { CSSProperties } from "react";
 
-import styles from "~/styles/main.css";
+// import styles from "~/styles/main.css";
 
 export const meta = () => {
   return [{ title: "New Remix App" }];
@@ -14,51 +14,41 @@ export default function Index() {
   ];
 
   return (
-    <main class="main-container">
-      <div class='row'>
-        <div class="circular-path-container">
-          <div id="main-image-container" class="circular-path-center circle">
-            <img class="img" src="https://media0.giphy.com/media/nDSlfqf0gn5g4/giphy.gif" alt="profile_pic" />
+    <main class="bg-rocky">
+      <div class="flex flex-row justify-evenly">
+        <div class="circular-path-container bg-cobalt">
+          <div class="w-80 h-80 overflow-hidden rounded-full">
+            <img class="w-full h-full" src="https://media0.giphy.com/media/nDSlfqf0gn5g4/giphy.gif" alt="profile_pic" />
           </div>
           {
             socials.map((socialURL, index) => (
               <a style={{"--i": index + 1}}>
-                <img class="circle img" src={socialURL} alt="alt text"/>
+                <img class="rounded-full w-full h-full" src={socialURL} alt="alt text"/>
               </a>
             ))
           }
         </div>
-        <div id="about-me-section">
-          <div id="about-me-left">
-            <h3>I am</h3>
-            <p>a Software Engineer</p>
-            <p>a consumer of media</p>
-            <p>a tennis player</p>
+        <div class="flex flex-row w-6/12">
+          <div class="w-6/12 bg-aqua">
+            <p class="px-10 py-5 text-3xl bg-purple text-center">I AM</p>
+            <p class="p-3 text-2xl text-center">a Software Engineer</p>
+            <p class="p-3 text-2xl text-center">a consumer of high-quality media</p>
+            <p class="p-3 text-2xl text-center">an avid recreational tennis player</p>
           </div>
-          <div id="about-me-right">
-            <h3>I am not</h3>
-            <p>Devops</p>
-            <p>a consumer of trashy reality shows</p>
-            <p>good at tennis</p>
+          <div class="w-6/12 bg-aqua">
+            <p class="px-10 py-5 text-3xl bg-purple text-center">I AM NOT</p>
+            <p class="p-3 text-2xl text-center">DevOps</p>
+            <p class="p-3 text-2xl text-center">a consumer of trashy reality TV</p>
+            <p class="p-3 text-2xl text-center">good at tennis</p>
           </div>
         </div>
-      </div>
-      <div id="blogs-section">
-        <p>Blogs I've Authored</p>
-        <ul>
-          <li>
-            <a href="https://smartlogic.io/blog/lets-play-with-react-hooks-from-a-function-component-to-a-function-component-with-state-and-animation/">
-              React Hooks
-            </a>
-          </li>
-        </ul>
       </div>
     </main>
   );
 }
 
-export function links() {
-  return [
-    {rel: "stylesheet", href: styles},
-  ];
-}
+// export function links() {
+//   return [
+//     {rel: "stylesheet", href: styles},
+//   ];
+// }

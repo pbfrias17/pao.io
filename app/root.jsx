@@ -8,14 +8,12 @@ import {
 } from "@remix-run/react";
 
 import FooterComponent from "./components/footer";
-import footerStyles from "./components/footer.css";
 import HeaderComponent from "./components/header";
-import headerStyles from "./components/header.css";
-import styles from "~/styles/main.css";
+import tailwind from "~/styles/tailwind.css";
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="en" class="font-quicksand bg-cobalt overflow-visible">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -40,8 +38,6 @@ export default function App() {
 
 export function links() {
   return [
-    {rel: "stylesheet", href: styles},
-    {rel: "stylesheet", href: headerStyles},
-    {rel: "stylesheet", href: footerStyles},
+    {rel: "stylesheet", href: tailwind},
   ];
 }
