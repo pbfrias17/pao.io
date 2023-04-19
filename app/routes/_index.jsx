@@ -1,5 +1,7 @@
 import { Link } from "@remix-run/react";
 
+import ProfileImage from "~/images/profile_pic.jpg";
+
 export default function Index() {
   const socials = [
     {
@@ -14,10 +16,10 @@ export default function Index() {
 
   return (
     <main class="bg-rocky m-16">
-      <div class="flex flex-row justify-evenly">
+      <div class="flex justify-evenly">
         <div class="circular-path-container">
           <div class="w-80 h-80 overflow-hidden rounded-full">
-            <img class="w-full h-full" src="https://media0.giphy.com/media/nDSlfqf0gn5g4/giphy.gif" alt="profile_pic" />
+            <img class="w-full -mt-10" src={ProfileImage} alt="profile_pic" />
           </div>
           {
             socials.map((social_data, index) => (
