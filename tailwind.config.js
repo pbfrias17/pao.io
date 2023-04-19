@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(circle at top, var(--tw-gradient-stops))',
+        'gradient-radial-cat': 'radial-gradient(circle at top, var(--tw-gradient-stops))',
+        'gradient-radial-cab': 'radial-gradient(circle at bottom, var(--tw-gradient-stops))',
       },
       colors: {
         'orange': '#e0894f',

@@ -11,9 +11,13 @@ import FooterComponent from "./components/footer";
 import HeaderComponent from "./components/header";
 import tailwind from "~/styles/tailwind.css";
 
+export const meta = () => {
+  return [{ title: "PAO.IO" }];
+};
+
 export default function App() {
   return (
-    <html lang="en" class="font-quicksand bg-cobalt overflow-visible">
+    <html lang="en" class="font-quicksand overflow-visible bg-rocky">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />

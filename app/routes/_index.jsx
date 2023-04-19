@@ -1,54 +1,92 @@
 import { Link } from "@remix-run/react";
-import { CSSProperties } from "react";
-
-// import styles from "~/styles/main.css";
-
-export const meta = () => {
-  return [{ title: "New Remix App" }];
-};
 
 export default function Index() {
   const socials = [
-    "https://media.istockphoto.com/id/173682323/photo/says.jpg?s=612x612&w=0&k=20&c=7jnXQrYzUWNTnLhjPgimxHIbjsaHvZmAMALGVzYNARQ=",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRboPSs61NMKh4nlrLRplavXI_7GyOdI4WRkqziVuah8c19n-eB59PhrvGLNLIyMT7HeIE&usqp=CAU",
+    {
+      text: "LI",
+      href: "https://linkedin.com/in/pbfrias17/",
+    },
+    {
+      text: "GH",
+      href: "https://github.com/pbfrias17",
+    },
   ];
 
   return (
-    <main class="bg-rocky">
+    <main class="bg-rocky m-16">
       <div class="flex flex-row justify-evenly">
-        <div class="circular-path-container bg-cobalt">
+        <div class="circular-path-container">
           <div class="w-80 h-80 overflow-hidden rounded-full">
             <img class="w-full h-full" src="https://media0.giphy.com/media/nDSlfqf0gn5g4/giphy.gif" alt="profile_pic" />
           </div>
           {
-            socials.map((socialURL, index) => (
-              <a style={{"--i": index + 1}}>
-                <img class="rounded-full w-full h-full" src={socialURL} alt="alt text"/>
+            socials.map((social_data, index) => (
+              <a href={social_data.href} style={{"--i": index + 4}}>
+                <div class="bg-cobalt w-full h-full flex flex-col justify-center rounded-full">
+                  <p class="text-whitesmoke underline font-semibold text-2xl text-center">{social_data.text}</p>
+                </div>
               </a>
             ))
           }
         </div>
-        <div class="flex flex-row w-6/12">
-          <div class="w-6/12 bg-aqua">
-            <p class="px-10 py-5 text-3xl bg-purple text-center">I AM</p>
-            <p class="p-3 text-2xl text-center">a Software Engineer</p>
-            <p class="p-3 text-2xl text-center">a consumer of high-quality media</p>
-            <p class="p-3 text-2xl text-center">an avid recreational tennis player</p>
-          </div>
-          <div class="w-6/12 bg-aqua">
-            <p class="px-10 py-5 text-3xl bg-purple text-center">I AM NOT</p>
-            <p class="p-3 text-2xl text-center">DevOps</p>
-            <p class="p-3 text-2xl text-center">a consumer of trashy reality TV</p>
-            <p class="p-3 text-2xl text-center">good at tennis</p>
-          </div>
-        </div>
+        <NameGrid />
       </div>
+      <AboutMeTable />
     </main>
   );
 }
 
-// export function links() {
-//   return [
-//     {rel: "stylesheet", href: styles},
-//   ];
-// }
+function NameGrid() {
+  const gridData = [
+    {left: "P", right: "Programming"},
+    {left: "A", right: "Artificial Intelligence"},
+    {left: "O", right: "Optimal"},
+    {left: "L", right: "Learning"},
+    {left: "O", right: "O(n)"},
+  ];
+
+  return (
+    <div class="flex flex-col w-6/12 my-auto">
+      {
+        gridData.map(({ left, right }) => (
+          <div class="flex flex-row">
+            <div class="flex flex-col w-[6.5rem] h-[6.5rem] justify-center bg-purple m-2 rounded-full"><p class="text-5xl text-whitesmoke text-center">{left}</p></div>
+            <div class="flex flex-1 flex-col bg-bluegreen justify-center m-2 rounded-2xl"><p class="text-lg text-whitesmoke text-center">{right}</p></div>
+          </div>
+        ))
+      }
+    </div>
+  )
+}
+
+function AboutMeTable() {
+  const headerClass = "w-6/12 px-10 mx-6 my-3 py-5 text-xl font-semibold bg-cobalt text-center rounded-2xl text-whitesmoke";
+  const rowClass = "w-6/12 py-5 px-8 mx-6 mx-12 my-3 text-xl text-center rounded-2xl bg-orange text-whitesmoke";
+
+  return (
+    <div class="flex flex-1 justify-center py-16">
+      <div class="flex flex-col w-8/12">
+        <div class="flex flex-row">
+          <div class={headerClass}>I AM</div>
+          <div class={headerClass}>I AM NOT</div>
+        </div>
+        <div class="flex flex-row">
+          <div class={rowClass}>a Software Engineer</div>
+          <div class={rowClass}>a Mechanical Engineer</div>
+        </div>
+        <div class="flex flex-row">
+          <div class={rowClass}>a consumer of only the <Link class="text-cobalt underline" to="/"><i>highest</i> quality media</Link></div>
+          <div class={rowClass}>a consumer of trashy reality TV</div>
+        </div>
+        <div class="flex flex-row">
+          <div class={rowClass}>an avid recreational tennis player</div>
+          <div class={rowClass}>good at tennis</div>
+        </div>
+        <div class="flex flex-row">
+          <div class={rowClass}>a snowboarder</div>
+          <div class={rowClass}>a boardsnower</div>
+        </div>
+      </div>
+    </div>
+  )
+}
