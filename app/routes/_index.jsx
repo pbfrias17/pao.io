@@ -15,11 +15,11 @@ export default function Index() {
   ];
 
   return (
-    <main class="bg-rocky m-16">
-      <div class="flex justify-evenly">
-        <div class="circular-path-container">
-          <div class="w-80 h-80 overflow-hidden rounded-full">
-            <img class="w-full -mt-10" src={ProfileImage} alt="profile_pic" />
+    <main class="bg-rocky">
+      <div class="flex flex-col md:flex-row align-middle justify-evenly">
+        <div class="circular-path-container mx-auto my-auto [--d:2em] md:[--d:4em]">
+          <div class="w-full h-full overflow-hidden rounded-full">
+            <img class="-mt-10" src={ProfileImage} alt="profile_pic" />
           </div>
           {
             socials.map((social_data, index) => (
@@ -48,7 +48,7 @@ function NameGrid() {
   ];
 
   return (
-    <div class="flex flex-col w-6/12 my-auto">
+    <div class="flex flex-col md:w-6/12 p-12 mt-10 md:mt-0">
       {
         gridData.map(({ left, right }) => (
           <div class="flex flex-row">
@@ -62,29 +62,33 @@ function NameGrid() {
 }
 
 function AboutMeTable() {
-  const headerClass = "w-6/12 px-10 mx-6 my-3 py-5 text-xl font-semibold bg-cobalt text-center rounded-2xl text-whitesmoke";
-  const rowClass = "w-6/12 py-5 px-8 mx-6 mx-12 my-3 text-xl text-center rounded-2xl bg-orange text-whitesmoke";
+  const rowContainerClass = "flex flex-row justify-around";
+  const headerClass = "w-5/12 flex flex-col justify-center my-3 py-5 px-10 text-xl font-semibold bg-cobalt text-center rounded-2xl text-whitesmoke";
+  const rowClass = "w-5/12 flex flex-col justify-center m-3 py-5 px-10 text-lg md:text-xl text-center rounded-2xl bg-orange text-whitesmoke";
 
   return (
     <div class="flex flex-1 justify-center py-16">
-      <div class="flex flex-col w-8/12">
-        <div class="flex flex-row">
+      <div class="flex flex-col">
+        <div class={rowContainerClass}>
           <div class={headerClass}>I AM</div>
           <div class={headerClass}>I AM NOT</div>
         </div>
-        <div class="flex flex-row">
+        <div class={rowContainerClass}>
           <div class={rowClass}>a Software Engineer</div>
-          <div class={rowClass}>a Mechanical Engineer</div>
+          <div class={rowClass}>
+            a Mechanical Engineer
+            <p class="text-sm">(failed ENG101 twice)</p>
+          </div>
         </div>
-        <div class="flex flex-row">
+        <div class={rowContainerClass}>
           <div class={rowClass}>a consumer of only the <Link class="text-cobalt underline" to="/"><i>highest</i> quality media</Link></div>
           <div class={rowClass}>a consumer of trashy reality TV</div>
         </div>
-        <div class="flex flex-row">
+        <div class={rowContainerClass}>
           <div class={rowClass}>an avid recreational tennis player</div>
           <div class={rowClass}>good at tennis</div>
         </div>
-        <div class="flex flex-row">
+        <div class={rowContainerClass}>
           <div class={rowClass}>a snowboarder</div>
           <div class={rowClass}>a boardsnower</div>
         </div>

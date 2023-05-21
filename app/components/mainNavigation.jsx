@@ -12,7 +12,7 @@ export default function MainNavigationComponent() {
     <ul class="flex flex-row justify-center">
       {
         navLinks.map(({ to, label }) => (
-          <li class="nav-item text-cobalt mx-5 mt-3 mb-10">
+          <li class="nav-item text-cobalt mx-3 md:mx-5 mt-3 mb-10">
             <NavLink to={to}>{label}</NavLink>
           </li>
         ))

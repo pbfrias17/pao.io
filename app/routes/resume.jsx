@@ -2,7 +2,7 @@ export default function ResumePage() {
   return (
     <main>
       {/* <p>Download my resume</p> */}
-      <div class="flex m-16 px-[10rem]">
+      <div class="flex md:m-16 md:px-[10rem]">
         <div class="flex flex-1 flex-col">
           <div class="bg-cobalt p-6 [&>p]:text-white">
             <p class="m-0 font-semibold text-3xl">Paolo Frias</p>
