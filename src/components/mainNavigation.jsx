@@ -15,7 +15,7 @@ export default function MainNavigationComponent() {
     <ul className="flex flex-row justify-center">
       {
         navLinks.map(({ to, label }) => (
-          <li className="nav-item text-cobalt mx-5 mt-3 mb-10" key={to}>
+          <li className="nav-item text-xs md:text-sm text-cobalt mx-5 md:mt-3 mb-10" key={to}>
             <Link className={`nav-item${pathname === to ? '-active' : ''}`} href={to}>{label}</Link>
           </li>
         ))

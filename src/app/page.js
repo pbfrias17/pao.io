@@ -16,10 +16,10 @@ export default function Home() {
   ];
 
   return (
-    <main className="bg-rocky m-16">
-      <div className="flex justify-evenly">
-        <div className="circular-path-container">
-          <div className="w-80 h-80 overflow-hidden rounded-full">
+    <main className="bg-rocky mx-3">
+      <div className="flex flex-col items-center justify-center">
+        <div className="circular-path-container mb-5">
+          <div className="w-48 h-48 overflow-hidden rounded-full">
             <Image className="w-full -mt-10" src={ProfileImage} alt="profile_pic" />
           </div>
           {
@@ -49,10 +49,10 @@ function NameGrid() {
   ];
 
   return (
-    <div className="flex flex-col w-6/12 my-auto">
+    <div className="flex w-full flex-col">
       {
         gridData.map(({ left, right }) => (
-          <div className="flex flex-row" to={left+right}>
+          <div className="flex justify-between" key={left+right}>
             <div className="flex flex-col w-[6.5rem] h-[6.5rem] justify-center bg-purple m-2 rounded-full"><p className="text-5xl text-whitesmoke text-center">{left}</p></div>
             <div className="flex flex-1 flex-col bg-bluegreen justify-center m-2 rounded-2xl"><p className="text-lg text-whitesmoke text-center">{right}</p></div>
           </div>
@@ -63,29 +63,29 @@ function NameGrid() {
 }
 
 function AboutMeTable() {
-  const headerClass = "w-6/12 px-10 mx-6 my-3 py-5 text-xl font-semibold bg-cobalt text-center rounded-2xl text-whitesmoke";
-  const rowClass = "w-6/12 py-5 px-8 mx-6 mx-12 my-3 text-xl text-center rounded-2xl bg-orange text-whitesmoke";
+  const headerClass = "flex flex-col justify-center w-[45%] px-3 my-3 py-5 text-xl font-semibold bg-cobalt text-center rounded-2xl text-whitesmoke";
+  const rowClass = "flex flex-col justify-center w-[45%] py-5 px-3 my-3 text-xl text-center rounded-2xl bg-orange text-whitesmoke";
 
   return (
-    <div className="flex flex-1 justify-center py-16">
-      <div className="flex flex-col w-8/12">
-        <div className="flex flex-row">
+    <div className="flex justify-center my-16">
+      <div className="flex w-full flex-col">
+        <div className="flex flex-row justify-between">
           <div className={headerClass}>I AM</div>
           <div className={headerClass}>I AM NOT</div>
         </div>
-        <div className="flex flex-row">
+        <div className="flex flex-row justify-between">
           <div className={rowClass}>a Software Engineer</div>
           <div className={rowClass}>a Mechanical Engineer</div>
         </div>
-        <div className="flex flex-row">
+        <div className="flex flex-row justify-between">
           <div className={rowClass}>a consumer of only the <Link className="text-cobalt underline" href="/"><i>highest</i> quality media</Link></div>
           <div className={rowClass}>a consumer of trashy reality TV</div>
         </div>
-        <div className="flex flex-row">
+        <div className="flex flex-row justify-between">
           <div className={rowClass}>an avid recreational tennis player</div>
           <div className={rowClass}>good at tennis</div>
         </div>
-        <div className="flex flex-row">
+        <div className="flex flex-row justify-between">
           <div className={rowClass}>a snowboarder</div>
           <div className={rowClass}>a boardsnower</div>
         </div>
