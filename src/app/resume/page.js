@@ -1,8 +1,13 @@
+import WidthControlledComponent from "@/components/widthControlled"
+
 export default function ResumePage() {
   return (
-    <main>
+    <main className="flex flex-col items-center">
       {/* <p>Download my resume</p> */}
-      <div className="flex m-16 px-[10rem]">
+      <WidthControlledComponent>
+        <p className="my-5 text-bluegreen italic">* formatted to fit on smaller screens</p>
+      </WidthControlledComponent>
+      <div className="flex flex-col w-[93%] md:w-[75%] md:flex-row">
         <div className="flex flex-1 flex-col">
           <div className="bg-cobalt p-6 [&>p]:text-white">
             <p className="m-0 font-semibold text-3xl">Paolo Frias</p>
