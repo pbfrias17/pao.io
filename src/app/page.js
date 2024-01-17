@@ -16,10 +16,10 @@ export default function Home() {
   ];
 
   return (
-    <main className="bg-rocky mx-3">
-      <div className="flex flex-col items-center justify-center">
-        <div className="circular-path-container mb-5">
-          <div className="w-48 h-48 overflow-hidden rounded-full">
+    <main className="bg-rocky mx-3 md:mx-24">
+      <div className="flex flex-col md:flex-row items-center justify-center">
+        <div className="circular-path-container circular-path-container-md mb-5">
+          <div className="w-8/12 h-2/3 overflow-hidden rounded-full border-8 border-orange">
             <Image className="w-full -mt-10" src={ProfileImage} alt="profile_pic" />
           </div>
           {
@@ -49,7 +49,7 @@ function NameGrid() {
   ];
 
   return (
-    <div className="flex w-full flex-col">
+    <div className="flex w-full md:w-auto grow flex-col">
       {
         gridData.map(({ left, right }) => (
           <div className="flex justify-between" key={left+right}>

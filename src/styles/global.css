@@ -46,6 +46,14 @@
     height: var(--s);
   }
 
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .circular-path-container-md  {
+      --d: 4.2em;
+      flex: 1;
+    }
+  }
+
   .circular-path-container a {
     position: absolute;
     top: 50%;
