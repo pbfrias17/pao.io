@@ -49,7 +49,7 @@ function NameGrid() {
   ];
 
   return (
-    <div className="flex w-full md:w-auto grow flex-col">
+    <div className="flex w-full md:w-auto 2xl:max-w-[50%] grow flex-col">
       {
         gridData.map(({ left, right }) => (
           <div className="flex justify-between" key={left+right}>

@@ -1,6 +1,6 @@
 export default function FooterComponent() {
-  return <div className="bg-gradient-radial-cab pt-10 from-cobalt to-orange from-35% md:from-15% to-45% md:to-20%">
-    <div className="flex px-16 md:px-96 mb-10 justify-between">
+  return <div className="bg-gradient-radial-cab pt-10 from-cobalt to-orange from-35% md:from-15% 2xl:from-[8%] to-45% md:to-20% 2xl:to-[12%]">
+    <div className="flex px-16 md:px-96 2xl:px-[30%] mb-10 justify-between">
       <div>
         <p className="text-sm text-cobalt underline">
           careers
