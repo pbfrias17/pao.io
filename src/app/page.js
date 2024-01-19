@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import ProfileImage from "/public/profile_pic.jpg";
 import Image from 'next/image';
+import { fetchLetterWords } from '@/data/queries';
 
 export default function Home() {
   const socials = [
@@ -39,22 +40,32 @@ export default function Home() {
   );
 }
 
-function NameGrid() {
-  const gridData = [
-    {left: "P", right: "Programming"},
-    {left: "A", right: "Artificial Intelligence"},
-    {left: "O", right: "Optimal"},
-    {left: "L", right: "Learning"},
-    {left: "O", right: "O(n)"},
-  ];
+function GetRandomWordFromList(list, blacklist) {
+  const randomIndex = Math.floor(Math.random() * list.length)
+  const cand = list[randomIndex]
+  if (blacklist.includes(cand)) {
+    return GetRandomWordFromList(list, blacklist)
+  } else {
+    blacklist.push(cand)
+    return cand
+  }
+}
+
+async function NameGrid() {
+  const gridData = [];
+  const words = [];
+  for (const letter of "paolo") {
+    const letterWords = await fetchLetterWords(letter);
+    gridData.push({ letter, word: GetRandomWordFromList(letterWords.words, words) })
+  }
 
   return (
     <div className="flex w-full md:w-auto 2xl:max-w-[50%] grow flex-col">
       {
-        gridData.map(({ left, right }) => (
-          <div className="flex justify-between" key={left+right}>
-            <div className="flex flex-col w-[6.5rem] h-[6.5rem] justify-center bg-purple m-2 rounded-full"><p className="text-5xl text-whitesmoke text-center">{left}</p></div>
-            <div className="flex flex-1 flex-col bg-bluegreen justify-center m-2 rounded-2xl"><p className="text-lg text-whitesmoke text-center">{right}</p></div>
+        gridData.map(({ letter, word }) => (
+          <div className="flex justify-between" key={letter+word}>
+            <div className="flex flex-col w-[6.5rem] h-[6.5rem] justify-center bg-purple m-2 rounded-full"><p className="text-5xl text-whitesmoke text-center">{letter.toUpperCase()}</p></div>
+            <div className="flex flex-1 flex-col bg-bluegreen justify-center m-2 rounded-2xl"><p className="text-lg text-whitesmoke text-center">{word}</p></div>
           </div>
         ))
       }
