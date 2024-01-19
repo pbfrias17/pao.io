@@ -27,7 +27,7 @@
       "**/*.ts",
       "**/*.tsx",
       ".next/types/**/*.ts",
-      "src/data/placeholderData.js",
+      "src/data/paoDBData.js",
       "scripts/seed.js"
     ],
     "exclude": ["node_modules"]
