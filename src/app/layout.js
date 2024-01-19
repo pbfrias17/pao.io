@@ -1,10 +1,6 @@
-import { Inter } from 'next/font/google'
-
 import '@/styles/global.css'
 import FooterComponent from "@/components/footer"
 import HeaderComponent from "@/components/header"
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'P A O . I O',
