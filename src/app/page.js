@@ -1,8 +1,9 @@
 import Link from 'next/link';
-
-import ProfileImage from "/public/profile_pic.jpg";
+import { Suspense } from 'react';
 import Image from 'next/image';
-import { fetchLetterWords } from '@/data/queries';
+
+import NameGrid from '@/components/nameGrid';
+import ProfileImage from "/public/profile_pic.jpg";
 
 export default function Home() {
   const socials = [
@@ -33,44 +34,13 @@ export default function Home() {
             ))
           }
         </div>
-        <NameGrid />
+        <Suspense fallback={<NameGrid placeholder={true} />}>
+          <NameGrid />
+        </Suspense>
       </div>
       <AboutMeTable />
     </main>
   );
-}
-
-function GetRandomWordFromList(list, blacklist) {
-  const randomIndex = Math.floor(Math.random() * list.length)
-  const cand = list[randomIndex]
-  if (blacklist.includes(cand)) {
-    return GetRandomWordFromList(list, blacklist)
-  } else {
-    blacklist.push(cand)
-    return cand
-  }
-}
-
-async function NameGrid() {
-  const gridData = [];
-  const words = [];
-  for (const letter of "paolo") {
-    const letterWords = await fetchLetterWords(letter);
-    gridData.push({ letter, word: GetRandomWordFromList(letterWords.words, words) })
-  }
-
-  return (
-    <div className="flex w-full md:w-auto 2xl:max-w-[50%] grow flex-col">
-      {
-        gridData.map(({ letter, word }) => (
-          <div className="flex justify-between" key={letter+word}>
-            <div className="flex flex-col w-[6.5rem] h-[6.5rem] justify-center bg-purple m-2 rounded-full"><p className="text-5xl text-whitesmoke text-center">{letter.toUpperCase()}</p></div>
-            <div className="flex flex-1 flex-col bg-bluegreen justify-center m-2 rounded-2xl"><p className="text-lg text-whitesmoke text-center">{word}</p></div>
-          </div>
-        ))
-      }
-    </div>
-  )
 }
 
 function AboutMeTable() {
